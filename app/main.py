@@ -29,7 +29,9 @@ class App(falcon.API):
 
 
 init_session()
-middleware = [AuthHandler(), JSONTranslator(), DatabaseSessionManager(db_session)]
+#middleware = [AuthHandler(), JSONTranslator(), DatabaseSessionManager(db_session)]
+middleware = [JSONTranslator(), DatabaseSessionManager(db_session)]
+
 application = App(middleware=middleware)
 
 
